@@ -1,0 +1,848 @@
+
+/* CONFIGURAÇÃO RESET */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* FONTES */
+.istok-web-regular { font-family: "Istok Web", sans-serif; font-weight: 400; }
+.langar-regular { font-family: "Langar", sans-serif; font-weight: 400; }
+.poppins-thin { font-family: "Poppins", sans-serif; font-weight: 100; }
+.poppins-regular { font-family: "Poppins", sans-serif; font-weight: 400; }
+.poppins-semibold { font-family: "Poppins", sans-serif; font-weight: 600; }
+.poppins-bold { font-family: "Poppins", sans-serif; font-weight: 700; }
+.baskervville-sc-regular { font-family: "Baskervville SC", serif;font-weight: 400; font-style: normal;}
+
+/* FONTE ESPECIFICA */
+@font-face {
+    font-family: 'SuperMario';
+    src: url('./fonts/SuperMario256.ttf') format('truetype');
+}
+
+
+/* PALETA DE CORES */
+/* Cor primária: #2C3E50 (um azul profundo) */
+/* Cor secundária: #18BC9C (verde água) */
+/* Cor de destaque: #E74C3C (vermelho) */
+/* Cor neutra: #ECF0F1 (cinza claro) */
+
+
+
+/* CORPO */
+.corpo {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    background: #658434    ;
+    justify-content: space-between;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Footer */
+.corpo footer {
+    display: flex;
+    flex-direction: column; /* Alinha os itens em coluna */
+    padding: 10px;
+    color: white;
+    text-align: center;
+    background: #658434 ;
+    border-radius: 0 0 16px 16px  ;
+    box-shadow: -10.9px 0px  30px 1px rgba(0, 0, 0, 0.90);
+    /*
+    backdrop-filter: blur(3.2px); 
+    -webkit-backdrop-filter: blur(3.2px);
+    */
+    border: 1px solid rgba(0, 0, 0, 1);
+}
+
+
+/* Fazendo .txt-rodape e .text2-rodape ficarem em coluna */
+footer .txt-rodape,
+footer .text2-rodape {
+    display: block; 
+    width: 100%; /* Ocupar toda a largura do footer */
+    text-align: center; 
+    margin-bottom: 0px;
+    cursor: default;
+}
+
+footer .text2-rodape {
+    color: #1D594E;
+    font-size: 2.0rem;
+    font-family: "Langar", sans-serif;
+    text-transform: uppercase;
+}
+
+
+footer .txt-rodape {
+    font-size: 26px;
+    font-weight:  bolder;
+    font-family: "Baskervville SC", serif;
+    color: transparent; /* Texto transparente para o gradiente do Instagram */
+    background: linear-gradient(900deg, #E74C3C, #000000);
+    background-clip: text; 
+
+
+}
+
+/* Mantendo o conteiner-social-rodape no centro */
+footer .conteiner-social-rodape {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    background-color: hsl(40, 100%, 96%);
+    border-radius: 10px;
+    padding: 10px;
+    width: 150px;
+    height: 70px;
+    margin: 0 auto; /* Centraliza horizontalmente dentro do footer */
+    margin-bottom: 10px;
+    cursor: default;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.rodape-icon {{{{{{}}}}} ((((()))))  [[[[[[]]]]]]
+    position: relative;
+    display: inline-block;
+    width: 100px; 
+    height: 50px;
+    transition: transform 0.3s ease, border 0.3s ease;
+    border: 2px solid transparent; 
+}
+
+
+.rodape-icon:hover {
+    transform: scale(1.15); /* a animação de zom dos icone */
+}
+
+.rodape-icon svg {
+    width: 100%;
+    height: 100%;
+    transition: fill 0.3s ease;
+    display: block; /* isto garanta que o SVG ocupe o espaço adequado */
+}
+
+/* Cor ao passar o mouse sobre os ícones */
+#linkedin-rodape:hover svg {
+    fill: #007abc; 
+    cursor: pointer;
+
+}
+
+#GitHub-rodape:hover svg {
+    fill: #48004b; 
+    cursor: pointer;
+}
+
+#Istagram-rodape:hover svg {
+    fill:#7a0339;
+    cursor: pointer;
+
+}
+
+
+
+
+/* Estilo do nome que aparece sobre o SVG */
+.rodape-icon .icon-name { 
+    position: absolute;
+    left: 50%;
+    opacity: 0 ;
+    visibility: hidden;
+    transform: translate(-50%, -50%);
+    transition: fill 0.3s ease;
+    color: green; /* Cor verde para o texto */
+    font-size: 18px;
+    font-weight: bold;
+    pointer-events: none; /* Garante que o texto não interfira na interação com o ícone */
+    white-space: nowrap; /* Garante que o texto não quebre em várias linhas */
+    border-radius: 5px;
+}
+
+
+
+#linkedin-rodape:hover .icon-name {
+    color: #0077B5; /* Cor verde do LinkedIn */
+    text-shadow: 0px 10px 3px rgba(0, 0, 0, 0.90);
+}
+
+#GitHub-rodape:hover .icon-name {
+    color: #370e74; /* Cor verde do GitHub */
+    text-shadow: 0px 10px 3px rgba(0, 0, 0, 0.90);
+}
+
+#Istagram-rodape:hover .icon-name {
+    color: transparent; /* Texto transparente para o gradiente do Instagram */
+    background: linear-gradient(45deg, #3d1458, #6e361a, #865613, #233382);
+    background-clip: text;
+    text-shadow: 0px 10px 3px rgba(0, 0, 0, 0.90);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Texto preenchido com gradiente */
+}
+
+
+.rodape-icon:hover .icon-name {
+    top:  -5px;
+    opacity: 1; /* aumentado a opacidade quando passar o mause */
+    visibility: visible;
+    pointer-events: auto;
+    scale: 1;  /* dando um leve zoom  */
+    transition: all 0.3s ease;
+    animation: shake 0.5s ease-in-out both;
+}
+
+
+
+/* a animação do tremor dos nomes*/
+@keyframes shake {  
+    0% {
+        rotate: 0;
+    }
+
+    25% {
+    rotate: 7deg;
+    }
+
+    50% {
+        rotate: -7deg;
+    }
+
+    75% {
+        rotate: 1deg;
+    }
+
+    100% {
+        rotate: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* CONTEÚDO PRINCIPAL */
+.conteudoMeio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 20px;
+    background: #658434 ;
+    border-radius: 16px 16px 0 0 ;
+    box-shadow: 0px -10.9px 30px 1px rgba(0, 0, 0, 0.90);
+    /*
+    backdrop-filter: blur(3.2px);
+    -webkit-backdrop-filter: blur(3.2px);
+    */
+    border: 1px solid rgba(0, 0, 0, 1);
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+/* Estilo de textos */
+.ttx {
+    font-family: "SuperMario", sans-serif;
+    text-transform: uppercase;
+    color: #1D594E ;
+    
+    -webkit-text-stroke: 3px #000000;
+    
+    text-shadow:   1px 1px 0 #000000,
+    -1px -1px 0 #000000,
+    1px -1px 0 #000000,
+    -1px 2px 0 #000000;
+
+    letter-spacing: 0px ;
+    cursor: default;
+}
+
+
+
+
+
+
+
+
+
+.mostrarLetras {
+    text-transform: uppercase;
+    font-size:60px;
+    cursor: default;
+    animation: growMostrarLetras 0.3s ease-in-out forwards;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+
+
+
+
+
+
+/* Caixa para Digitar */
+.conteinerCampoParaDigitar {
+    width: 100%;
+    max-width: 300px;
+    margin: 10px auto;
+}
+
+.conteinerCampoParaDigitar .compoParaDigitar {
+    width: 100%;
+    text-transform: uppercase;
+    padding: 10px;
+    background: rgb(136, 128, 128);
+    border-radius: 10px;
+    font-size: 1.2rem;
+    border: 2px solid ;
+    cursor: text;
+}
+
+
+
+
+
+
+
+
+
+/* Botão de Iniciar */
+.BotaoInicicar {
+    width: 100px;
+    padding: 10px;
+    margin: 20px 0;
+    background: #1D594E; /* Adicionando cor de fundo mais visível */
+    border: 1px solid #1D594E;
+    border-radius: 5px;
+    box-shadow:
+
+    inset 0 30px 30px -15px rgba(255, 255, 255, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.3),
+    inset 0 1px 20px rgba(0, 0, 0, 0),
+    0 3px 0 #1D594E,
+    0 3px 2px rgba(0, 0, 0, 0.2),
+    0 5px 10px rgba(0, 0, 0, 0.1),
+    0 10px 20px rgba(0, 0, 0, 0.1);
+
+    text-transform: uppercase;
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    transition:  transform 0.3s;
+}
+
+.BotaoInicicar:active {
+    transform: translateY(3px);
+    box-shadow:
+        
+    inset 0 16px 2px -15px rgba(0, 0, 0, 0),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.15),
+    inset 0 1px 20px rgba(0, 0, 0, 0.1),
+    0 0 0 #0f988e,
+    0 0 0 2px rgba(255, 255, 255, 0.5),
+    0 0 0 rgba(0, 0, 0, 0),
+    0 0 0 rgba(0, 0, 0, 0);
+    
+}
+
+
+
+
+
+
+
+
+
+/* Palavras escolhidas */
+.TipoDaPalavraEscolhida {
+    background-color: #F29F05 ;
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
+    padding: 10px;
+    border-radius: 15px;
+    width: 80%;
+    margin: 10px auto;
+    cursor: default;
+}
+
+#p-mostraCategoria{
+    font-size: 5.1vw;
+    
+    color: #1D594E;
+    background-color: #FFCC6E;
+    border: 4px solid;
+    border-radius: 15px;
+    cursor: default;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Letras chutadas */
+.conteinerLetrasDigitadas {
+    width: 100%;
+    max-width: 340px;
+    background: rgb(136, 128, 128);
+    border-radius: 15px;
+    padding: 10px;
+    margin: 20px auto;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    cursor: default;
+}
+
+.letras-Chutadas {
+    font-size: 2rem;
+    cursor: default;
+}
+
+
+
+
+
+
+
+
+
+
+/* Contêiner da imagem de fundo e da imagem PEPE */
+.container-img {
+    position: relative; /* Para que o .PEPE seja posicionado relativamente à .img-fundo */
+    width: 100%; /* Largura total do contêiner */
+    max-width: 100%; /* Garante que o contêiner não ultrapasse o tamanho máximo */
+}
+
+/* Imagem de fundo */
+.img-fundo {
+    width: 100%; /* Largura total da imagem de fundo */
+    height: auto; /* Ajusta a altura proporcionalmente */
+    display: block; /* Remove o espaço extra ao redor da imagem */
+}
+
+/* Imagem PEPE */
+.PEPE {
+    z-index: 1; /* Posiciona acima da imagem de fundo */
+    position: absolute; /* Posicionamento relativo ao .container-img */
+    width: 13%; /* Largura da imagem PEPE */
+    top: 48%; /* Distância do topo do contêiner */
+    left: 34%; /* Distância da esquerda do contêiner */
+    
+}
+
+
+
+
+/* MEDIA QUERIES PARA RESPONSIVIDADE */
+
+/* Para telas pequenas (celulares e tablets) */
+@media (max-width: 768px) {
+    .corpo {
+        padding: 10px;
+    }
+
+    .ttx {
+        font-size: 9vw;
+    }
+
+    .conteinerCampoParaDigitar .compoParaDigitar {
+        font-size: 2.5rem;
+        padding: 8px;
+    }
+
+    .mostrarLetras {
+        font-size:2.4rem;
+    }
+    .BotaoInicicar {
+        width: 100px;
+        height: 70px;
+        padding: 8px;
+    }
+
+    .TipoDaPalavraEscolhida {
+        font-size: 1.2rem;
+    }
+
+    .conteinerLetrasDigitadas {
+        font-size: 1.2rem;
+    }
+
+    .modal1 {
+        width: 100%; /* Ocupará 100% da largura em telas menores */
+        padding: 15px;
+    }
+
+
+}
+
+/* Para telas médias (tablets maiores e laptops pequenos) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .corpo {
+        padding: 20px;
+    }
+
+    .ttx {
+        font-size: 8vw;
+    }
+
+    .conteinerCampoParaDigitar .compoParaDigitar {
+        font-size: 2.5rem;
+    }
+
+    .BotaoInicicar {
+        width: 220px;
+        padding: 22px;
+    }
+
+    .TipoDaPalavraEscolhida {
+        font-size: 1.4rem;
+    }
+
+    .conteinerLetrasDigitadas {
+        font-size: 1.3rem;
+    }
+
+
+}
+
+/* Para telas grandes (desktops) */
+@media (min-width: 1025px) {
+    .corpo {
+        padding: 30px;
+    }
+
+    .ttx {
+        font-size: 8vw;
+    }
+
+    .conteinerCampoParaDigitar .compoParaDigitar {
+        font-size: 2.5rem;
+    }
+
+
+
+
+    .BotaoInicicar {
+        width: 200px;
+        height: 80px;
+    }
+
+    .TipoDaPalavraEscolhida {
+        font-size: 1.6rem;
+    }
+
+    .conteinerLetrasDigitadas {
+        font-size: 1.4rem;
+    }
+}    
+
+
+
+@keyframes growMostrarLetras {
+    
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+    }
+    
+    
+    
+    @keyframes growElementsFooter {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+    }
+    
+
+
+
+
+
+/* MODAL DURANTE O JOGO */
+
+
+
+
+.modal-bg {
+    background-image: url('../img/pepe-fundo 1.svg'); /* Caminho ajustado */
+    background-size: cover; /* Faz com que a imagem ocupe toda a modal */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Não repete a imagem */
+    height: 100%; /* Garante que o conteúdo da modal ocupe a altura total */
+    width: 100%;  /* Garante que a modal ocupe toda a largura */
+    position: relative; /* Para garantir que a imagem fique no fundo */
+    
+    /* Adicionando flexbox para organizar o conteúdo */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+
+/* Estilos para o conteúdo da modal */
+.modal-content {
+    text-align: center;
+
+}
+
+/* Garantir que o conteúdo da modal esteja acima do fundo */
+.modal-header,
+.modal-body,
+.modal-footer {
+    border: none;
+    z-index: 1;
+    background-color:transparent; /* Fundo semitransparente */
+}
+
+/* Opcional: Ajustar a transparência do modal-content */
+.modal-bg {
+    background-color: transparent; /* Ajuste conforme necessário */
+}
+
+
+
+/* Estilo para a Modal Header */
+.modal-header {
+    background-color: transparent; /* Fundo semitransparente escuro */
+    display: flex;
+    flex-direction: column; /* Alinha os itens em coluna */
+}
+
+
+
+.modal-header .modal-title {
+    font-family: "Baskervville SC", serif;
+    color: #7A3636;
+}
+
+
+
+.modal-title1 {
+    /* Adicione seus estilos para o modal-title1 */
+    margin-top: 10px; /* Margem superior para separá-los visualmente */
+    color: var(--darkreader-text--bs-heading-color, #b16a00);
+    font-family: "Baskervville SC", serif;
+}
+
+
+
+
+
+
+
+
+/* Estilo para a Modal Body */
+.modal-body {
+    background-color: transparent; /* Fundo semitransparente claro */
+}
+
+/* Estilo para a Modal Footer */
+.modal-footer {
+    background-color: transparent; /* Fundo semitransparente claro */
+}
+
+
+.input-container {
+    display: flex;
+    align-items: center; /* Mantém a imagem e o input alinhados verticalmente */
+    justify-content: center; /* Centraliza horizontalmente, se necessário */
+}
+
+.input-container img.input-img {
+    z-index: 1;
+    left: 30px;
+    width: 60px; /* Defina o tamanho da imagem */
+    height: 60px; /* Defina o tamanho da imagem */
+}
+
+.input-container .form-control {
+    text-transform: uppercase;
+    background: rgb(0, 0, 0); /* Cor de fundo preta no input */
+    border: 2px solid green; /* Borda verde com 2px */
+    color: white; /* Cor do texto no input */
+    border-radius: 5px; /* Borda arredondada */
+    width: 100%; /* Faz o input ocupar a largura total disponível */
+}
+
+.input-container input::placeholder {
+    color: #c0c0c0; /* Cor cinza claro para o placeholder */
+}
+
+
+
+
+
+
+
+
+
+
+
+/* stylizando a modal */
+
+
+/* modal de vitoria ou derrota */
+#resultadoModal {
+    transition: transform 0.3s ease-in-out;
+
+}
+
+#resultadoModal .btn-primary {
+    background: #26ff00c6;
+}
+
+#resultadoModal .modal-content {
+    background: #565313;
+    box-shadow: 0 4px 10px rgb(0, 0, 0);
+}
+
+#resultadoModal  .btn-secondary {
+    background: #ff0000c6;
+}
+
+
+
+#resultadoModal  #avisoMensagem {
+    font-size: larger;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* modal de aviso */
+
+#avisoModal {
+    transition: transform 0.3s ease-in-out;
+
+}
+
+
+#avisoModal .modal-content {
+    background: #ff0000;
+    box-shadow: 0 4px 10px rgb(255, 0, 0);
+}
+
+
+#avisoModal .btn-secondary {
+    background: #2a9d00;
+    border: rgb(179, 179, 179) solid 3px;
+    box-shadow:
+
+    inset 0 30px 30px -15px rgba(255, 255, 255, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.3),
+    inset 0 1px 20px rgba(0, 0, 0, 0),
+    0 3px 0 #08a129,
+    0 3px 2px rgba(0, 0, 0, 0.2),
+    0 5px 10px rgba(0, 0, 0, 0.1),
+    0 10px 20px rgba(0, 0, 0, 0.1);
+
+}
+
+
+
+#avisoModal #avisoMensagem {
+    font-size: larger;
+}

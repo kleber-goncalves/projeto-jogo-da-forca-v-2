@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOGO DA FORCA</title>
+
+            <!-- BOOTSTRAP -->
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+            <!-- CSS -->
+            <link rel="stylesheet" href="css/style.css">
+        
+
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baskervville+SC&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Langar&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+        
+            <!-- JavaScript -->
+            <script src="js/script.js" defer></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+    <body class="corpo">
+
+
+    <!-- PARTE PRINCIPAL -->
+    <main class="conteudoMeio">
+        <p class="ttx">Jogo Da Forca</p>
+
+
+
+
+
+          <!-- MANUTENÇÃO-->
+
+
+          <div class="container-img">
+            
+              <img class="img-fundo" src="img/fundo.svg" alt="Imagem em SVG"> 
+    
+    
+              <!-- forca \/-->
+    
+    
+              <img class=" PEPE " src=" img/forca1.svg " alt="imagem da forca">
+
+        </div>
+
+
+
+
+
+
+
+        
+
+          <!-- FIM DA MANUTENÇÃO-->
+
+
+
+        <div class="mostrarLetras"></div>
+
+        <div class="conteinerCampoParaDigitar">
+            <input type="text" class="compoParaDigitar" placeholder="DIGITE A LETRA AQUI" maxlength="1">
+        </div>
+
+        <div class="conteiner-BotaoInicicar" >
+            <button class="BotaoInicicar" onclick="btcomeçar()">   
+                <span class="text-botao">Play</span>
+            </button>
+        </div>
+
+        <div class="TipoDaPalavraEscolhida">
+            <h3>Categoria da palavra</h3>
+            <p id="p-mostraCategoria"></p> 
+        </div>
+
+        <div class="conteinerLetrasDigitadas">
+            <h2>LETRAS CHUTADAS</h2>
+            <p class="letras-Chutadas"></p>
+        </div>
+    </main>
+    <!-- FIM DA PARTE PRINCIPAL -->
+
+
+
+    <!-- Modal 1: Boas-vindas e Nome -->
+    <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="modal1Label" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content modal-bg ">
+          <div class="modal-header">
+            <h2 class="modal-title" id="modal1Label">Bem-vindo ao</h2>
+            <h1 lass="modal-title1">jogo da forca</h1>
+          </div>
+          <div class="modal-body">
+
+
+              <div class="input-container" > 
+
+                <img src="img/pepe-veio.svg" class="input-img" alt="img-frente-imput">
+
+                <input type="text" id="nome" class="form-control" placeholder="digite seu nome aqui">
+
+              </div>
+
+
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" id="proceedButton">Começar Jogo</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Modal 2: Introdução -->
+  <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="modal2Label" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="modal2Label">Introdução</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+              </div>
+              <div class="modal-body">
+                  <p>Bem-vindo ao jogo da forca! Prepare-se para se divertir.</p>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" id="continueButton">Continuar</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Modal 3: Instruções -->
+  <div class="modal fade" id="modal3" tabindex="-1" aria-labelledby="modal3Label" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="modal3Label">Instruções</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+              </div>
+              <div class="modal-body">
+                  <p>Você deve adivinhar a palavra escolhida, letra por letra.</p>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" id="continueButton2" >Continuar</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Modal 4: Dicas -->
+  <div class="modal fade" id="modal4" tabindex="-1" aria-labelledby="modal4Label" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered ">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="modal4Label">Dicas</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+              </div>
+              <div class="modal-body">
+                  <p>Use suas melhores estratégias para adivinhar as letras.</p>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" id="continueButton3" >Continuar</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Modal 5: Confirmação para Iniciar -->
+  <div class="modal fade" id="modal5" tabindex="-1" aria-labelledby="modal5Label" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="modal5Label">Iniciar o Jogo?</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+              </div>
+              <div class="modal-body">
+                  <p>Você está pronto para começar o jogo!</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button"  id="botaoSim"  class="btn btn-success">Sim</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- Modal para vitória/derrota -->
+<div class="modal fade" id="resultadoModal" tabindex="-1" aria-labelledby="resultadoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="resultadoModalLabel">Resultado</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p id="resultadoMensagem"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="sonModal()" >FECHAR</button>
+          <button type="button" class="btn btn-primary" onclick="reiniciarJogo()">RECOMEÇAR</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- FIM DO MODAL -->
+
+
+
+  <!-- Modal para avisos (letra inválida ou repetida) -->
+  <div class="modal fade" id="avisoModal" tabindex="-1" aria-labelledby="avisoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="avisoModalLabel">AVISO</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p id="avisoMensagem"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="sonModal()" >FECHAR</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+    <!-- FIM DO MODAL -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- RODAPE -->
+    <footer>
+        <p class="txt-rodape">Kleber Gonçalves</p>
+        <p class="text2-rodape">Jogo da Forca</p>
+
+        <div class="conteiner-social-rodape">
+
+        <div id="linkedin-rodape" class="rodape-icon">
+
+          <a href="https://www.linkedin.com/in/kleber-gon%C3%A7alves-a82533322/" target="_blank" aria-label="LinkedIn">
+          <svg class="likedin-rodape" data-title="LinkedIn"... xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50">
+            <path d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M17,20v19h-6V20H17z M11,14.47c0-1.4,1.2-2.47,3-2.47s2.93,1.07,3,2.47c0,1.4-1.12,2.53-3,2.53C12.2,17,11,15.87,11,14.47z M39,39h-6c0,0,0-9.26,0-10 c0-2-1-4-3.5-4.04h-0.08C27,24.96,26,27.02,26,29c0,0.91,0,10,0,10h-6V20h6v2.56c0,0,1.93-2.56,5.81-2.56 c3.97,0,7.19,2.73,7.19,8.26V39z"></path>
+          </svg>
+          </a>
+          <span class="icon-name">LinkedIn</span>
+        </div>
+
+        <div id="GitHub-rodape" class="rodape-icon">
+
+        <a href= "https://github.com/kleber-goncalves" target="_blank" aria-label="GitHub"></a>
+          <svg class="GitHub-rodape" data-title="GitHub" ... xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 30 30">
+            <path d="M15,3C8.373,3,3,8.373,3,15c0,5.623,3.872,10.328,9.092,11.63C12.036,26.468,12,26.28,12,26.047v-2.051 c-0.487,0-1.303,0-1.508,0c-0.821,0-1.551-0.353-1.905-1.009c-0.393-0.729-0.461-1.844-1.435-2.526 c-0.289-0.227-0.069-0.486,0.264-0.451c0.615,0.174,1.125,0.596,1.605,1.222c0.478,0.627,0.703,0.769,1.596,0.769 c0.433,0,1.081-0.025,1.691-0.121c0.328-0.833,0.895-1.6,1.588-1.962c-3.996-0.411-5.903-2.399-5.903-5.098 c0-1.162,0.495-2.286,1.336-3.233C9.053,10.647,8.706,8.73,9.435,8c1.798,0,2.885,1.166,3.146,1.481C13.477,9.174,14.461,9,15.495,9 c1.036,0,2.024,0.174,2.922,0.483C18.675,9.17,19.763,8,21.565,8c0.732,0.731,0.381,2.656,0.102,3.594 c0.836,0.945,1.328,2.066,1.328,3.226c0,2.697-1.904,4.684-5.894,5.097C18.199,20.49,19,22.1,19,23.313v2.734 c0,0.104-0.023,0.179-0.035,0.268C23.641,24.676,27,20.236,27,15C27,8.373,21.627,3,15,3z"></path>
+          </svg>
+        </a>
+          <span class="icon-name">GitHub</span>
+        </div>
+
+        <div id="Istagram-rodape" class="rodape-icon">
+
+        <a href="https://www.instagram.com/kleber_goncalves.s/?igsh=MXdvYW52b2RiZTRlZA%3D%3D" target="_blank" aria-label="Instagram">
+          <svg class="Istagram-rodape" data-title="Instagram" ...  xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 24 24">
+            <path d="M 8 3 C 5.239 3 3 5.239 3 8 L 3 16 C 3 18.761 5.239 21 8 21 L 16 21 C 18.761 21 21 18.761 21 16 L 21 8 C 21 5.239 18.761 3 16 3 L 8 3 z M 18 5 C 18.552 5 19 5.448 19 6 C 19 6.552 18.552 7 18 7 C 17.448 7 17 6.552 17 6 C 17 5.448 17.448 5 18 5 z M 12 7 C 14.761 7 17 9.239 17 12 C 17 14.761 14.761 17 12 17 C 9.239 17 7 14.761 7 12 C 7 9.239 9.239 7 12 7 z M 12 9 A 3 3 0 0 0 9 12 A 3 3 0 0 0 12 15 A 3 3 0 0 0 15 12 A 3 3 0 0 0 12 9 z"></path>
+          </svg>
+        </a>
+          <span class="icon-name">Instagram</span>
+        </div>
+
+      </div>
+    </footer>
+    <!-- FIM DO RODAPE -->
+        
+
+
+
+<!-- Sons -->
+<audio id="somClick" src="audio/click.mp3"></audio>
+<audio id="somVitoria" src="audio/vitoria.mp3"></audio>
+<audio id="somDerrota" src="audio/derrota.mp3"></audio>
+<audio id="somErro" src="audio/erro.mp3"></audio>
+<audio id="somAcerto" src="audio/acerto.mp3"></audio>
+<audio id="somLetraRepetida" src="audio/letraRepetida.mp3"></audio>
+<audio id="somInvalido" src="audio/invalida.mp3"></audio>
+<audio id="somInicial" src="audio/inicial.mp3" loop></audio>
+<!-- Fim Sons -->
+
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "projeto-jogo-da-forca-v-2",
+  "version": "1.0.0",
+  "main": "servidor.js",
+  "scripts": {
+    "start": "node js/servidor.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "download": "^8.0.0",
+    "express": "^4.21.1"
+  }
+}
